@@ -1,15 +1,20 @@
 import React from 'react';
 import './App.css';
+import Nav from "./Nav";
 import MovieList from "./MovieList";
+import AddMovie from "./AddMovie";
+import {MovieProvider} from "./MovieContext";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <MovieList/>
-      </header>
-    </div>
-  );
+    return (
+        <MovieProvider>
+            <div className="App">
+                <Nav/>
+                <MovieList/>
+                <AddMovie/>
+            </div>
+        </MovieProvider>
+    );
 }
 
 export default App;
